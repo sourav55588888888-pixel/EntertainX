@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EntertainX — Discover Your Next Favorite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">✦</span> Entertain<span>X</span></a>
+    <nav>
+      <a href="#discover">Discover</a>
+      <a href="#categories">Categories</a>
+      <a href="#watchlist">My List <span id="listCount" class="count">0</span></a>
+    </nav>
+    <button class="profile" aria-label="Profile">U</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR PERSONAL ENTERTAINMENT GUIDE</p>
+        <h1>Less scrolling.<br><span>More watching.</span></h1>
+        <p class="hero-copy">Discover movies, series, sports, music and games picked around your taste.</p>
+        <a class="primary-btn" href="#discover">Explore recommendations <span>→</span></a>
+        <div class="hero-stats">
+          <div><strong id="totalCount">18</strong><small>Curated picks</small></div>
+          <div><strong>5</strong><small>Categories</small></div>
+          <div><strong>∞</strong><small>Ways to discover</small></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Entertainment collage illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="poster poster-a"><span>✦</span><b>BEYOND<br>THE STARS</b><small>SCI-FI • 2026</small></div>
+        <div class="poster poster-b"><span>◉</span><b>THE<br>PLAYBOOK</b><small>SPORTS • DOCS</small></div>
+        <div class="poster poster-c"><span>♫</span><b>NIGHT<br>DRIVE</b><small>MUSIC MIX</small></div>
+        <div class="floating-tag tag-top">✧ Curated for you</div>
+        <div class="floating-tag tag-bottom">★ Top-rated picks</div>
+      </div>
+    </section>
+
+    <section class="preference-panel">
+      <div>
+        <p class="eyebrow">MAKE IT YOURS</p>
+        <h2>What are you in the mood for?</h2>
+      </div>
+      <div class="preferences">
+        <label>Category
+          <select id="categorySelect">
+            <option value="All">Everything</option>
+            <option value="Movie">Movies</option>
+            <option value="Series">Web series</option>
+            <option value="Sports">Sports</option>
+            <option value="Music">Music</option>
+            <option value="Gaming">Gaming</option>
+          </select>
+        </label>
+        <label>Genre
+          <select id="genreSelect"><option value="All">All genres</option></select>
+        </label>
+        <label>Minimum rating <span id="ratingValue">7.0+</span>
+          <input id="ratingRange" type="range" min="0" max="10" step="0.5" value="7">
+        </label>
+        <button id="recommendBtn" class="primary-btn">Find my picks</button>
+      </div>
+    </section>
+
+    <section id="discover" class="content-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">HANDPICKED FOR YOUR NEXT BREAK</p><h2 id="resultsTitle">Trending discoveries</h2></div>
+        <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search titles, genres..." aria-label="Search entertainment"></div>
+      </div>
+      <div id="quickFilters" class="quick-filters">
+        <button class="filter-chip active" data-category="All">All</button>
+        <button class="filter-chip" data-category="Movie">Movies</button>
+        <button class="filter-chip" data-category="Series">Series</button>
+        <button class="filter-chip" data-category="Sports">Sports</button>
+        <button class="filter-chip" data-category="Music">Music</button>
+        <button class="filter-chip" data-category="Gaming">Gaming</button>
+      </div>
+      <div id="cards" class="cards"></div>
+      <div id="emptyState" class="empty-state hidden"><div>✧</div><h3>No matches yet</h3><p>Try another search or lower your minimum rating.</p><button id="resetBtn" class="secondary-btn">Reset filters</button></div>
+    </section>
+
+    <section id="categories" class="category-section">
+      <p class="eyebrow">ONE HUB, EVERY MOOD</p><h2>Explore by universe</h2>
+      <div class="category-grid">
+        <button data-category="Movie" class="category-tile tile-movie"><span>▣</span><b>Movies</b><small>Big-screen stories</small></button>
+        <button data-category="Series" class="category-tile tile-series"><span>▤</span><b>Web series</b><small>One more episode</small></button>
+        <button data-category="Sports" class="category-tile tile-sports"><span>◉</span><b>Sports</b><small>Feel the game</small></button>
+        <button data-category="Music" class="category-tile tile-music"><span>♫</span><b>Music</b><small>Find your sound</small></button>
+        <button data-category="Gaming" class="category-tile tile-gaming"><span>⌘</span><b>Gaming</b><small>Press start</small></button>
+      </div>
+    </section>
+
+    <section id="watchlist" class="watchlist-section">
+      <div class="section-heading"><div><p class="eyebrow">SAVED FOR LATER</p><h2>Your watchlist</h2></div><button id="clearListBtn" class="text-btn">Clear list</button></div>
+      <div id="watchlistItems" class="watchlist-items"><p class="muted">Save a card with the + button and it will show up here.</p></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#">✦ Entertain<span>X</span></a><p>Made for curious minds and great entertainment. <span>Demo project • Sample data</span></p></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
